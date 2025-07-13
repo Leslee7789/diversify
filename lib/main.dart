@@ -1,5 +1,7 @@
-import 'package:diversify/home_screen.dart';
+import 'package:diversify/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+        
+    return GetMaterialApp(
+      title: 'Diversify',
+      debugShowCheckedModeBanner: false
     return MaterialApp(
       title: 'Diversify',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Satoshi',
       ),
-      home: const HomeScreen(),
+      initialRoute: AppRoutes.splash,
+      getPages: AppRoutes.routes,
     );
   }
 }
