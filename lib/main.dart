@@ -18,9 +18,7 @@ class MyApp extends StatelessWidget {
         
     return GetMaterialApp(
       title: 'Diversify',
-      debugShowCheckedModeBanner: false
-    return MaterialApp(
-      title: 'Diversify',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'Satoshi',
